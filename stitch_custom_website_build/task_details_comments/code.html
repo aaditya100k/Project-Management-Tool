@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProjectFlow - Finalize UI Kit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e4e1ee",
+                        "on-surface": "#1b1b24",
+                        "tertiary": "#7e3000",
+                        "surface-container-high": "#eae6f4",
+                        "on-tertiary-container": "#ffd2be",
+                        "on-surface-variant": "#464555",
+                        "on-secondary-container": "#54647a",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#d0e1fb",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "inverse-surface": "#302f39",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-tint": "#4d44e3",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c7c4d8",
+                        "on-primary-fixed": "#0f0069",
+                        "inverse-primary": "#c3c0ff",
+                        "inverse-on-surface": "#f3effc",
+                        "tertiary-container": "#a44100",
+                        "surface": "#fcf8ff",
+                        "on-primary-container": "#dad7ff",
+                        "surface-variant": "#e4e1ee",
+                        "surface-container": "#f0ecf9",
+                        "surface-bright": "#fcf8ff",
+                        "on-tertiary-fixed": "#351000",
+                        "on-background": "#1b1b24",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "outline": "#777587",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "surface-dim": "#dcd8e5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-primary": "#ffffff",
+                        "primary": "#3525cd",
+                        "primary-container": "#4f46e5",
+                        "tertiary-fixed": "#ffdbcc",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "secondary": "#505f76",
+                        "surface-container-low": "#f5f2ff",
+                        "primary-fixed": "#e2dfff",
+                        "background": "#fcf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "gutter": "20px",
+                        "margin-desktop": "32px",
+                        "unit": "4px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display": ["Inter"],
+                        "label-md": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "title-lg": ["18px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Shell Components -->
+<!-- SideNavBar (from JSON) -->
+<aside class="flex flex-col h-screen p-md gap-sm bg-surface dark:bg-surface-dim h-full w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline z-40 hidden md:flex">
+<div class="mb-lg">
+<h1 class="text-title-lg font-title-lg font-bold text-primary dark:text-primary-fixed">ProjectFlow</h1>
+<p class="text-label-md font-label-md text-secondary">Enterprise Workspace</p>
+</div>
+<nav class="flex-1 space-y-xs">
+<div class="flex items-center gap-md p-sm text-secondary dark:text-secondary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg cursor-pointer active:scale-95 transition-transform font-body-md text-body-md">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="flex items-center gap-md p-sm bg-secondary-container dark:bg-secondary-fixed-dim text-on-secondary-container dark:text-on-secondary-fixed font-semibold rounded-lg cursor-pointer active:scale-95 transition-transform font-body-md text-body-md">
+<span class="material-symbols-outlined">assignment</span>
+<span>My Tasks</span>
+</div>
+<div class="flex items-center gap-md p-sm text-secondary dark:text-secondary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg cursor-pointer active:scale-95 transition-transform font-body-md text-body-md">
+<span class="material-symbols-outlined">folder_shared</span>
+<span>Projects</span>
+</div>
+<div class="flex items-center gap-md p-sm text-secondary dark:text-secondary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg cursor-pointer active:scale-95 transition-transform font-body-md text-body-md">
+<span class="material-symbols-outlined">inbox</span>
+<span>Inbox</span>
+</div>
+<div class="flex items-center gap-md p-sm text-secondary dark:text-secondary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg cursor-pointer active:scale-95 transition-transform font-body-md text-body-md">
+<span class="material-symbols-outlined">analytics</span>
+<span>Reporting</span>
+</div>
+</nav>
+<div class="mt-auto space-y-xs pt-lg border-t border-outline-variant">
+<div class="flex items-center gap-md p-sm text-secondary hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-body-md font-body-md">Settings</span>
+</div>
+<div class="flex items-center gap-md p-sm text-secondary hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">help</span>
+<span class="text-body-md font-body-md">Help</span>
+</div>
+<button class="w-full mt-md bg-primary-container text-white py-sm rounded-lg font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all">
+                Create Project
+            </button>
+</div>
+</aside>
+<!-- TopAppBar (from JSON) -->
+<header class="flex items-center justify-between px-lg w-full h-16 sticky top-0 z-30 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm md:ml-64 w-[calc(100%-16rem)]">
+<div class="flex items-center gap-lg">
+<h2 class="text-title-lg font-title-lg font-black text-primary dark:text-primary-fixed">ProjectFlow</h2>
+<div class="hidden lg:flex items-center gap-md">
+<span class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors cursor-pointer text-label-md font-label-md">Overview</span>
+<span class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 cursor-pointer text-label-md font-label-md">Board</span>
+<span class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors cursor-pointer text-label-md font-label-md">Timeline</span>
+<span class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors cursor-pointer text-label-md font-label-md">Calendar</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-xl pr-md py-xs rounded-lg border border-outline-variant bg-surface-container-low focus:ring-2 focus:ring-primary outline-none text-body-md w-64" placeholder="Search tasks..." type="text"/>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer p-xs">notifications</span>
+<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer p-xs">history</span>
+<button class="bg-primary text-white px-md py-xs rounded-lg text-label-md font-label-md hover:opacity-90 active:opacity-80 transition-all">Invite</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-xs">
+<img class="w-full h-full object-cover" data-alt="A professional corporate headshot of a team lead, clear studio lighting with a neutral gray background, focused gaze, high resolution digital photography style, clean and modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtBY-vOu48-8JtRExtaYKnNk5aMIKtbV-pr2KwRK2fPmbrIbrpGspCz7IZr71hPEgC5tZqrOkjJjxbTU1-DCxnhStsDqlHYye4l0oTAWDStLCO4qSik_sLa968tAVKBxyc-4dXGhtw1d-12ML1D_T0KHsWfDhLHkNUpPsrI38jk9JwNqkwBCr_4Ru9GVOtKgTPtIBxdWLtLETl62Ygxyt4zJou1ayG4SECpdUE_AMW-ryQQ9DLgT0dmP7hdbjFBgMhUl4iWfPVe0Q"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 p-gutter max-w-7xl mx-auto animate-in fade-in duration-500">
+<!-- Task Detail Container (Focused Bento-ish Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-start">
+<!-- Left Column: Core Task Details -->
+<div class="lg:col-span-8 space-y-lg">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-xl shadow-sm">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm px-md py-xs bg-secondary-container text-on-secondary-container rounded-full w-fit">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md font-label-md">In Progress</span>
+</div>
+<div class="flex gap-xs">
+<button class="p-xs hover:bg-surface-container-high rounded-lg transition-colors"><span class="material-symbols-outlined text-outline">share</span></button>
+<button class="p-xs hover:bg-surface-container-high rounded-lg transition-colors"><span class="material-symbols-outlined text-outline">more_horiz</span></button>
+<button class="p-xs hover:bg-surface-container-high rounded-lg transition-colors"><span class="material-symbols-outlined text-outline">close</span></button>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-md">Finalize UI Kit</h1>
+<div class="prose prose-sm text-secondary mb-xl">
+<p class="font-body-lg text-body-lg">The final sprint for the ProjectFlow design system requires a comprehensive audit of all existing components. We need to ensure that the indigo-to-violet color transitions are consistent across both light and dark modes. Particular attention should be paid to the accessibility of the primary button contrast ratios.</p>
+<ul class="mt-md space-y-xs list-disc list-inside font-body-md text-body-md">
+<li>Review all typography tokens (H1-H6)</li>
+<li>Standardize border radii to 8px across all cards</li>
+<li>Verify Material Symbols integration for navigation icons</li>
+<li>Export final assets to the developer hand-off folder</li>
+</ul>
+</div>
+<!-- Labels & Tags -->
+<div class="flex flex-wrap gap-sm pt-md border-t border-outline-variant">
+<span class="px-md py-xs rounded-lg bg-primary-container/10 text-primary font-label-md text-label-md border border-primary/20">Design System</span>
+<span class="px-md py-xs rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md">High Priority</span>
+<span class="px-md py-xs rounded-lg bg-surface-container-high text-secondary font-label-md text-label-md">v2.0 Release</span>
+</div>
+</div>
+<!-- Comment & Activity Section -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="px-xl py-lg border-b border-outline-variant flex items-center justify-between">
+<h3 class="font-title-lg text-title-lg text-on-surface">Activity &amp; Comments</h3>
+<div class="flex items-center gap-sm">
+<span class="text-label-md font-label-md text-secondary">Sort by: Newest</span>
+<span class="material-symbols-outlined text-secondary text-body-md">expand_more</span>
+</div>
+</div>
+<div class="p-xl space-y-lg max-h-[500px] overflow-y-auto">
+<!-- Activity Item -->
+<div class="flex gap-md">
+<div class="w-10 h-10 rounded-full flex-shrink-0 border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A detailed professional portrait of a senior designer, soft natural lighting, warm and approachable expression, minimalist creative studio background, high quality photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeoTHUZ6dIHWsUGGfiMA1Pi-yd_jGO3N-mSUWp-ARkmbkAgZ2IVoq5uwmI6vUPn4TLgankpX1K2o9v6eyyy-XnObOYCkIVwf5KozdmUN_XzZ2W5yrdPSThiU5lM7ex7XrMppgS7fwI7qU-FrrCsXtXyuxzUjXj5EPIpEl9AlBUGVx689fSympm7wfzRuFwkd1sWKfaqNNsPAeek48rQofP7KOeDt0vM64Ier0bWHeS-Cuy7NGyrY70YOh4STZGhZvsargyu85XjIE"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-xs">
+<span class="font-label-md text-label-md font-bold">Sarah Chen</span>
+<span class="text-label-sm text-label-sm text-outline">2 hours ago</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl rounded-tl-none font-body-md text-body-md text-on-surface-variant">
+                                    I've just uploaded the updated button states. Please take a look at the hover transitions for the ghost buttons—they might need a bit more contrast.
+                                </div>
+<div class="mt-xs flex gap-md">
+<button class="text-label-sm font-label-sm text-primary hover:underline">Reply</button>
+<button class="text-label-sm font-label-sm text-outline hover:text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">thumb_up</span> 2
+                                    </button>
+</div>
+</div>
+</div>
+<!-- System Log Item -->
+<div class="flex items-center gap-md pl-xl">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<p class="text-label-md font-label-md text-outline">
+<span class="font-bold">Marcus Wright</span> changed due date to <span class="text-primary">Oct 24, 2023</span>
+<span class="ml-md text-label-sm text-label-sm opacity-60">4 hours ago</span>
+</p>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-md">
+<div class="w-10 h-10 rounded-full flex-shrink-0 border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a product manager, bright office background with blurred monitors, friendly smile, clean and sharp focus, professional digital aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJSXU5J2adlVHoPNNdQYOef2KnjeT5zEy7eTYPG-00cYkwO-wtjteFr44Wgx4UVLjYosp4RgYmEg13-gu61wb3gDcKANoTBmjjSOjweixkQPCWN2PHQA4pSOv_BSmK0U1tdnVmD3UQM0smbOU0eXDN8EApIwAMEZ0N3Pg5gbiWvazXYVVkBDFtA7kuxtsRJHTvYraZIP_QqydwhXvoF0OZZ7aJiMh-DiuofdG8lQ7KbkMtQ4MZbnkmgcqbCOJE9a_z0lz63fFEADk"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-xs">
+<span class="font-label-md text-label-md font-bold">Marcus Wright</span>
+<span class="text-label-sm text-label-sm text-outline">5 hours ago</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl rounded-tl-none font-body-md text-body-md text-on-surface-variant">
+                                    The engineering team needs the HEX codes by EOD today to stay on schedule. Let's prioritize the typography hand-off first.
+                                </div>
+<div class="mt-xs flex gap-md">
+<button class="text-label-sm font-label-sm text-primary hover:underline">Reply</button>
+<button class="text-label-sm font-label-sm text-outline hover:text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">thumb_up</span> 1
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Input Box -->
+<div class="p-xl bg-surface-container border-t border-outline-variant">
+<div class="flex gap-md">
+<div class="w-10 h-10 rounded-full flex-shrink-0 border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Corporate headshot of a diverse team member, professional lighting, soft background colors, modern office vibe, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD22gs-ab9RcDRzczxvPxRWnTJSO3lprd3hNabNLRyy_f4Bw3wyPQ78M4dqzZwbMrS_A6bEoARJPlOZ-t9NoRJXpgIJXfqAaJWaKU6Biv-I3be4YxtUgC68EyOQsLwkzpjiUnHE2cRp3Y7Rn91FZOMmU4slKM_-zMoCNjF2ocuILOOr3Ux-mnJKU7r4fy07lOk5k-4GVgHWdPDuMKt14U4Njr-IE495IrjZaMNFjBL86ldRnKiRDgbsR3LyQ92iikGwo7pDud44VFA"/>
+</div>
+<div class="flex-1 space-y-sm">
+<textarea class="w-full h-24 p-md rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-surface-container-lowest font-body-md text-body-md resize-none transition-shadow shadow-inner" placeholder="Add a comment or @mention someone..."></textarea>
+<div class="flex justify-between items-center">
+<div class="flex gap-xs">
+<button class="p-xs text-outline hover:text-primary hover:bg-surface-container-high rounded-lg transition-all"><span class="material-symbols-outlined">attach_file</span></button>
+<button class="p-xs text-outline hover:text-primary hover:bg-surface-container-high rounded-lg transition-all"><span class="material-symbols-outlined">sentiment_satisfied</span></button>
+<button class="p-xs text-outline hover:text-primary hover:bg-surface-container-high rounded-lg transition-all"><span class="material-symbols-outlined">alternate_email</span></button>
+</div>
+<button class="bg-primary text-white px-xl py-xs rounded-lg font-label-md text-label-md hover:shadow-lg hover:translate-y-[-1px] active:translate-y-0 active:scale-95 transition-all">Comment</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar Meta Info -->
+<div class="lg:col-span-4 space-y-lg">
+<!-- Task Properties Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<h4 class="font-title-lg text-title-lg text-on-surface mb-lg">Details</h4>
+<div class="space-y-md">
+<div class="flex flex-col gap-xs">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Assignee</span>
+<div class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Profile of a senior UI designer, professional lighting, modern minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsnN7nc_kglpVdoDY5k3odI0FaGkDkX7Q1evhU9fOwlGGrr_tZ7DWrbIuViYM7nIqSAKa4sCJTimAnxldYa0EKOx6I40zQ_po4OZcFMtPI7RBKBSJVPxpyPGJMikUF_Q_StgrKePN58QW4H9ZYVYRuoBr8HfLR7wL28WblANJNidRsEwBLRdaI622wmaj8MDMEgo2XAwyL75awaOlFpdclUeHE_-n6LdsQgp-0zp-z9RJopVUhiq34o0dm1_r4z-cBsLo2J0STJI4"/>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Sarah Chen</span>
+<span class="material-symbols-outlined ml-auto text-outline text-body-md">edit</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Due Date</span>
+<div class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<span class="material-symbols-outlined text-outline">calendar_today</span>
+<span class="font-body-md text-body-md text-on-surface">October 24, 2023</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Priority</span>
+<div class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+<span class="font-body-md text-body-md text-on-surface">Urgent</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Project</span>
+<div class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<span class="material-symbols-outlined text-primary">folder</span>
+<span class="font-body-md text-body-md text-on-surface">UI Refresh 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Subtasks/Checklist Bento Item -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="p-lg bg-surface-container border-b border-outline-variant flex justify-between items-center">
+<h4 class="font-title-lg text-title-lg text-on-surface">Subtasks</h4>
+<span class="text-label-sm font-label-sm bg-primary/10 text-primary px-sm py-xs rounded-full">2/4</span>
+</div>
+<div class="p-lg space-y-sm">
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md line-through text-outline">Color palette audit</span>
+</label>
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md line-through text-outline">Typography scale verification</span>
+</label>
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant">Icon family consistency check</span>
+</label>
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant">Asset export for dev hand-off</span>
+</label>
+<button class="w-full mt-sm py-xs border-2 border-dashed border-outline-variant rounded-lg text-outline font-label-md text-label-md hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-body-md">add</span> Add Subtask
+                        </button>
+</div>
+</div>
+<!-- Attachments Bento Item -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="flex justify-between items-center mb-md">
+<h4 class="font-title-lg text-title-lg text-on-surface">Attachments</h4>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">add</span>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="aspect-square bg-surface-container-high rounded-lg overflow-hidden relative group cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A screenshot of a mobile UI dashboard design, vibrant indigo and violet colors, clean white cards, elegant data visualizations and charts, professional UI/UX design presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHyWVq7R9NL2LrmD10wv-sVheTS3Er7AmeV2-326JZrLgytKUSOuGiosma5Kva18wJmGN3eZu_8mqX2nygzsNc50xX2NM5wgZSA1C7yBRW7sOOAwwVgpgt7wHwld6rLlX3jYSmugE3mmqgCtXLisGM-W1J5YdU_O78WQZjoo5rSSS9ObXY_QLfUA92GMX5HeNLQVXYH7nQeFmmTzFsiMsb6A6wVjo0xTRtmSokp0aFHnAFpATqXI1bMm6vTqkU2mb-9ixe2ZU3SK0"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">visibility</span>
+</div>
+</div>
+<div class="aspect-square bg-surface-container-high rounded-lg flex flex-col items-center justify-center text-outline hover:text-primary hover:bg-surface-container transition-all cursor-pointer border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-display mb-xs">description</span>
+<span class="text-label-sm font-label-sm">Tokens.json</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Micro-interaction Background Sparkle (Optional enhancement) -->
+<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+<div class="absolute w-64 h-64 bg-primary/5 blur-[120px] rounded-full transition-transform duration-500 ease-out" id="glow-follow"></div>
+</div>
+<script>
+        // Micro-interaction for the glow effect
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.getElementById('glow-follow');
+            if (glow) {
+                const x = e.clientX - 128;
+                const y = e.clientY - 128;
+                glow.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        });
+
+        // Simple scale interaction for cards
+        const cards = document.querySelectorAll('.bg-surface-container-lowest');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('transition-all', 'duration-300');
+            });
+        });
+    </script>
+</body></html>
